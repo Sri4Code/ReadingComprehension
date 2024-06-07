@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories and Quizzes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .story {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin: 10px 0;
+        }
+        .question label {
+            display: block;
+            margin: 5px 0;
+        }
+        .feedback {
+            font-size: 1em;
+            margin-top: 5px;
+        }
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            margin-right: 5px;
+        }
+        .tab.active {
+            background-color: #ddd;
+        }
+        .tab-content {
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Stories and Quizzes</h1>
+    <div class="tabs">
+        <div class="tab active" onclick="openTab('fiction')">Fiction Story</div>
+        <div class="tab" onclick="openTab('nonfiction')">Non-Fiction Story</div>
+    </div>
+
+    <div id="fiction" class="tab-content active">
+        <h2>Lily's Adventure</h2>
+        <div class="story">
+            <p>Once upon a time, in a small village by the sea, there lived a curious little girl named Lily. Every day, Lily loved to explore the beach and collect colorful shells. One sunny morning, she found a shiny, golden shell that sparkled in the sunlight. As she picked it up, she heard a tiny voice say, "Thank you for finding me!" Surprised, Lily looked around but saw no one. Then, the golden shell began to glow and a small, friendly fairy appeared. The fairy introduced herself as Sparkle and told Lily that she was lost. Lily promised to help Sparkle find her way back home. Together, they went on an adventure through the village, meeting new friends and discovering hidden places. By sunset, they found the magical garden where Sparkle lived. The fairy thanked Lily with a twinkling smile and promised to visit her whenever Lily needed a friend.</p>
+        </div>
+
+        <div class="quiz">
+            <div class="question">
+                <p>1. What did Lily love to do every day?</p>
+                <label><input type="radio" name="q1" value="A"> A. Swim in the sea</label>
+                <label><input type="radio" name="q1" value="B"> B. Explore the beach and collect colorful shells</label>
+                <label><input type="radio" name="q1" value="C"> C. Play with her dog</label>
+                <label><input type="radio" name="q1" value="D"> D. Build sandcastles</label>
+                <button onclick="checkAnswer('q1', 'B')">Submit Answer</button>
+                <div class="feedback" id="feedback-q1"></div>
+            </div>
+
+            <div class="question">
+                <p>2. What did Lily find on the beach one sunny morning?</p>
+                <label><input type="radio" name="q2" value="A"> A. A silver coin</label>
+                <label><input type="radio" name="q2" value="B"> B. A golden shell</label>
+                <label><input type="radio" name="q2" value="C"> C. A starfish</label>
+                <label><input type="radio" name="q2" value="D"> D. A small boat</label>
+                <button onclick="checkAnswer('q2', 'B')">Submit Answer</button>
+                <div class="feedback" id="feedback-q2"></div>
+            </div>
+
+            <div class="question">
+                <p>3. What happened when Lily picked up the golden shell?</p>
+                <label><input type="radio" name="q3" value="A"> A. It turned into a butterfly</label>
+                <label><input type="radio" name="q3" value="B"> B. It made a loud noise</label>
+                <label><input type="radio" name="q3" value="C"> C. She heard a tiny voice say, "Thank you for finding me!"</label>
+                <label><input type="radio" name="q3" value="D"> D. It started to rain</label>
+                <button onclick="checkAnswer('q3', 'C')">Submit Answer</button>
+                <div class="feedback" id="feedback-q3"></div>
+            </div>
+
+            <div class="question">
+                <p>4. Who appeared from the golden shell?</p>
+                <label><input type="radio" name="q4" value="A"> A. A tiny crab</label>
+                <label><input type="radio" name="q4" value="B"> B. A small, friendly fairy named Sparkle</label>
+                <label><input type="radio" name="q4" value="C"> C. A talking fish</label>
+                <label><input type="radio" name="q4" value="D"> D. A magic bird</label>
+                <button onclick="checkAnswer('q4', 'B')">Submit Answer</button>
+                <div class="feedback" id="feedback-q4"></div>
+            </div>
+
+            <div class="question">
+                <p>5. What did Lily and Sparkle do together?</p>
+                <label><input type="radio" name="q5" value="A"> A. They went swimming</label>
+                <label><input type="radio" name="q5" value="B"> B. They went on an adventure through the village</label>
+                <label><input type="radio" name="q5" value="C"> C. They flew in the sky</label>
+                <label><input type="radio" name="q5" value="D"> D. They dug for treasure</label>
+                <button onclick="checkAnswer('q5', 'B')">Submit Answer</button>
+                <div class="feedback" id="feedback-q5"></div>
+            </div>
+
+            <div class="question">
+                <p>6. Where did they finally find Sparkle's home?</p>
+                <label><input type="radio" name="q6" value="A"> A. In a tall tree</label>
+                <label><input type="radio" name="q6" value="B"> B. Under the sea</label>
+                <label><input type="radio" name="q6" value="C"> C. In a magical garden</label>
+                <label><input type="radio" name="q6" value="D"> D. Inside a cave</label>
+                <button onclick="checkAnswer('q6', 'C')">Submit Answer</button>
+                <div class="feedback" id="feedback-q6"></div>
+            </div>
+
+            <div class="question">
+                <p>7. What did Sparkle promise Lily at the end of the story?</p>
+                <label><input type="radio" name="q7" value="A"> A. To give her a treasure</label>
+                <label><input type="radio" name="q7" value="B"> B. To teach her magic</label>
+                <label><input type="radio" name="q7" value="C"> C. To visit her whenever Lily needed a friend</label>
+                <label><input type="radio" name="q7" value="D"> D. To take her flying</label>
+                <button onclick="checkAnswer('q7', 'C')">Submit Answer</button>
+                <div class="feedback" id="feedback-q7"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="nonfiction" class="tab-content">
+        <h2>Mary Anning's Discovery</h2>
+        <div class="story">
+            <p>In the early 1800s, a young girl named Mary Anning lived in the coastal town of Lyme Regis in England. Mary loved to explore the cliffs and beaches near her home. She was fascinated by the strange, ancient creatures whose remains were buried in the rocks. Her father, a cabinetmaker, often took her on fossil-hunting trips, and Mary quickly became an expert at finding and identifying fossils.</p>
+            <p>One day, when Mary was just 12 years old, she made an incredible discovery. While searching the cliffs after a storm, she found a huge skull buried in the limestone. It took her months of careful excavation, but eventually, she uncovered the complete skeleton of an ancient sea creature. It was the first complete ichthyosaur skeleton ever found.</p>
+            <p>Mary's discovery amazed scientists and changed the way people thought about the history of life on Earth. Over her lifetime, she made many more important fossil discoveries, including the first complete plesiosaur skeleton and the first British pterosaur. Despite having little formal education and facing many challenges because she was a woman in a male-dominated field, Mary's contributions to paleontology were groundbreaking.</p>
+            <p>Today, Mary Anning is remembered as one of the most important fossil hunters in history. Her discoveries helped to shape our understanding of prehistoric life and laid the foundations for the science of paleontology.</p>
+        </div>
+
+        <div class="quiz">
+            <div class="question">
+                <p>1. Where did Mary Anning live?</p>
+                <label><input type="radio" name="q8" value="A"> A. Lyme Regis, England</label>
+                <label><input type="radio" name="q8" value="B"> B. London, England</label>
+                <label><input type="radio" name="q8" value="C"> C. Paris, France</label>
+                <label><input type="radio" name="q8" value="D"> D. New York, USA</label>
+                <button onclick="checkAnswer('q8', 'A')">Submit Answer</button>
+                <div class="feedback" id="feedback-q8"></div>
+            </div>
+
+            <div class="question">
+                <p>2. What did Mary Anning love to do?</p>
+                <label><input type="radio" name="q9" value="A"> A. Paint pictures</label>
+                <label><input type="radio" name="q9" value="B"> B. Read books</label>
+                <label><input type="radio" name="q9" value="C"> C. Explore the cliffs and beaches to find fossils</label>
+                <label><input type="radio" name="q9" value="D"> D. Cook food</label>
+                <button onclick="checkAnswer('q9', 'C')">Submit Answer</button>
+                <div class="feedback" id="feedback-q9"></div>
+            </div>
+
+            <div class="question">
+                <p>3. What was Mary's father's profession?</p>
+                <label><input type="radio" name="q10" value="A"> A. Carpenter</label>
+                <label><input type="radio" name="q10" value="B"> B. Fisherman</label>
+                <label><input type="radio" name="q10" value="C"> C. Cabinetmaker</label>
+                <label><input type="radio" name="q10" value="D"> D. Teacher</label>
+                <button onclick="checkAnswer('q10', 'C')">Submit Answer</button>
+                <div class="feedback" id="feedback-q10"></div>
+            </div>
+
+            <div class="question">
+                <p>4. How old was Mary when she discovered the first complete ichthyosaur skeleton?</p>
+                <label><input type="radio" name="q11" value="A"> A. 10 years old</label>
+                <label><input type="radio" name="q11" value="B"> B. 12 years old</label>
+                <label><input type="radio" name="q11" value="C"> C. 14 years old</label>
+                <label><input type="radio" name="q11" value="D"> D. 16 years old</label>
+                <button onclick="checkAnswer('q11', 'B')">Submit Answer</button>
+                <div class="feedback" id="feedback-q11"></div>
+            </div>
+
+            <div class="question">
+                <p>5. What was one of Mary's significant discoveries?</p>
+                <label><input type="radio" name="q12" value="A"> A. The first dinosaur bone</label>
+                <label><input type="radio" name="q12" value="B"> B. The first complete ichthyosaur skeleton</label>
+                <label><input type="radio" name="q12" value="C"> C. The first fossilized bird</label>
+                <label><input type="radio" name="q12" value="D"> D. The first complete mammoth skeleton</label>
+                <button onclick="checkAnswer('q12', 'B')">Submit Answer</button>
+                <div class="feedback" id="feedback-q12"></div>
+            </div>
+
+            <div class="question">
+                <p>6. What was another important fossil that Mary discovered?</p>
+                <label><input type="radio" name="q13" value="A"> A. The first fossilized tree</label>
+                <label><input type="radio" name="q13" value="B"> B. The first plesiosaur skeleton</label>
+                <label><input type="radio" name="q13" value="C"> C. The first complete dinosaur skull</label>
+                <label><input type="radio" name="q13" value="D"> D. The first fossilized plant</label>
+                <button onclick="checkAnswer('q13', 'B')">Submit Answer</button>
+                <div class="feedback" id="feedback-q13"></div>
+            </div>
+
+            <div class="question">
+                <p>7. Why is Mary Anning remembered today?</p>
+                <label><input type="radio" name="q14" value="A"> A. She was the first woman scientist</label>
+                <label><input type="radio" name="q14" value="B"> B. She made groundbreaking fossil discoveries</label>
+                <label><input type="radio" name="q14" value="C"> C. She wrote a famous book</label>
+                <label><input type="radio" name="q14" value="D"> D. She invented the microscope</label>
+                <button onclick="checkAnswer('q14', 'B')">Submit Answer</button>
+                <div class="feedback" id="feedback-q14"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            document.querySelector(`#${tabName}`).classList.add('active');
+            document.querySelector(`.tab[onclick="openTab('${tabName}')"]`).classList.add('active');
+        }
+
+        function checkAnswer(question, correctAnswer) {
+            const radios = document.getElementsByName(question);
+            let selectedValue;
+            for (let radio of radios) {
+                if (radio.checked) {
+                    selectedValue = radio.value;
+                }
+            }
+
+            const feedbackElement = document.getElementById(`feedback-${question}`);
+            if (selectedValue === correctAnswer) {
+                feedbackElement.textContent = "Correct!";
+                feedbackElement.style.color = "green";
+            } else {
+                feedbackElement.textContent = "Wrong. Try again.";
+                feedbackElement.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
